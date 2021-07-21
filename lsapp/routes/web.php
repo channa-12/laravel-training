@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,23 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/*
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return '<h1>Hello world</h1>';
 });
-
-// Route::get('/hello', function () {
-//     // return view('welcome');
-//     return '<h1>Hello world</h1>';
-// });
-
-Route::get('/about', function(){
-    return view('pages.about');
-});
-
 Route::get('/users/{id}/{name}', function($name, $id){
     return 'This is user ' .$name. ' with an id of ' .$id;
 });
+*/
+
+
+//@index is a method name in Controllers -> PagesController.php
+Route::get('/', [PagesController::class, 'index']);
+
+Route::get('/about', [PagesController::class, 'about']);
+
+Route::get('/services', [PagesController::class, 'services']);
 
 
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
