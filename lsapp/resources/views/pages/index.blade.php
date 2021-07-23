@@ -2,7 +2,7 @@
 
 
 @section('content')
-<main class="container">
+  <main class="container" style="margin-top:4rem">
     <div class="jumbotron text-center">
       <h1>Welcome To Laravel</h1>
       <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
