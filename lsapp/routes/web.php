@@ -44,3 +44,7 @@ Route::resource('posts', PostsController::class);
 // or this one for route resource
 // Route::resources(['posts' => PostsController::class]);
 
+
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
