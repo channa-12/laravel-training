@@ -9,6 +9,7 @@ class PagesController extends Controller
     // either can use compact or with
     public function index(){
         $title = 'Welcome to Laravel!';
+        // $post = ;
         // return view ('pages.index', compact('title'));
         return view ('pages.index')-> with ('title', $title);
     }

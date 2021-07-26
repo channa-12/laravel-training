@@ -15,7 +15,6 @@
     @if(!Auth::guest())
         @if(Auth::user()->id == $post->user_id)
             <a href="/posts/{{$post->id}}/edit" class="btn btn-dark">Edit</a>
-            
 
             {!! Form::open(['action' => ['App\Http\Controllers\PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right float-right' ]) !!}
                 {{Form::hidden('_method', 'DELETE')}}
